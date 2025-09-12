@@ -1,0 +1,8 @@
+.env
+
+*.iml
+.idea
+
+vendor
+build.sh
+composer.phar

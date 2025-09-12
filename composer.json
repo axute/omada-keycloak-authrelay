@@ -1,0 +1,21 @@
+{
+  "name": "axute/omada-keycloak-authrelay",
+  "description": "AuthRelay for Omada Controller with Keycloak/OIDC integration",
+  "type": "project",
+  "keywords": ["omada", "keycloak", "authrelay"],
+  "autoload": {
+    "psr-4": {
+      "AuthRelay\\": "src"
+    }
+  },
+  "license": "MIT",
+  "require": {
+    "vlucas/phpdotenv": "v5.6.2",
+    "guzzlehttp/guzzle": "^7.10",
+    "ext-json": "*",
+    "slim/slim": "^4.15",
+    "slim/psr7": "^1.7",
+    "bryanjhv/slim-session": "^4.1",
+    "stevenmaguire/oauth2-keycloak": "^5.1"
+  }
+}
