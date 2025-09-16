@@ -129,22 +129,11 @@ docker run -d --name authrelay --env-file .env -p 80:80 authrelay
 ### Also availble via Docker Compose
 (not tested, but should work)
 
-1. Clone the repository:
-
-```bash
-git clone <repository-url>
-cd authrelay
-```
-
-2. build the docker image
-```bash
-docker build -t authrelay
-``` 
-* start the docker with Docker Compose:
+start the docker with Docker Compose:
 ```docker
 services:
     authrelay:
-        image: authrelay
+        image: ghcr.io/axute/omada-keycloak-authrelay:stable
         restart: always
         envinonment:
             - KEYCLOAK_SERVER_URL=https://keycloak.your-domain.com
