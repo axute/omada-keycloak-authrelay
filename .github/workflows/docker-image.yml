@@ -10,6 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Get timestamp
+      id: timestamp
+      run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
     - uses: actions/checkout@v4
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
@@ -24,5 +27,6 @@ jobs:
         context: .
         push: true
         tags: |
-          axute/omada-keycloak-authrelay:$(date +%s)
           axute/omada-keycloak-authrelay:stable
+          axute/omada-keycloak-authrelay:latest
+          axute/omada-keycloak-authrelay:${{ steps.timestamp.outputs.date }}
