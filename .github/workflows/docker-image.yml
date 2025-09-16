@@ -31,3 +31,11 @@ jobs:
           ghcr.io/${{ github.repository }}:latest
           ghcr.io/${{ github.repository }}:stable
           ghcr.io/${{ github.repository }}:${{ steps.timestamp.outputs.date }}
+        labels: |
+          org.opencontainers.image.title=${{ github.repository }}
+          org.opencontainers.image.description=CI-built image from ${{ github.repository }}
+          org.opencontainers.image.version=${{ steps.timestamp.outputs.date }}
+          org.opencontainers.image.created=${{ github.event.head_commit.timestamp }}
+          org.opencontainers.image.source=https://github.com/${{ github.repository }}
+          org.opencontainers.image.revision=${{ github.sha }}
+          maintainer=axute
