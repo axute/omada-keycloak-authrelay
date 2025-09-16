@@ -30,4 +30,4 @@ jobs:
         tags: |
           ghcr.io/${{ github.repository }}:latest
           ghcr.io/${{ github.repository }}:stable
-          ghcr.io/${{ github.repository }}::${{ steps.timestamp.outputs.date }}
+          ghcr.io/${{ github.repository }}:${{ steps.timestamp.outputs.date }}
